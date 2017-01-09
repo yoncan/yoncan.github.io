@@ -1,2 +1,0 @@
-# yoncan.github.io
-blog
