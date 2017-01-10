@@ -86,22 +86,43 @@
 
 
 
-<meta name="description" content="前端太菜了,花了两天时间才弄好. 看来还得好好的学css">
+<meta name="description" content="说明参考: 信号什么是信号？当核心框架的其他地方或另一个 Flask 扩展中发生动作时，信号通过发送 通知来帮助你解耦应用。简言之，信号允许某个发送者通知接收者有事情发生了。
+
+案例使用信号,分四个步骤处理
+
+创建一个信号
+创建接收到信号之后处理的回调函数
+信号绑定回调函数
+发送消息
+
+创建一个信号这里创建了一个mail_send的信号12345678from flask.signals impo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="运维后台资产管理的变更和备注记录功能">
-<meta property="og:url" content="https://yoncan.github.io/blog/2016/07/yunwei-cmdb.html">
+<meta property="og:title" content="flask signal信号机制">
+<meta property="og:url" content="https://yoncan.github.io/blog/2017/01/flask-signal.html">
 <meta property="og:site_name" content="HI~ 杨小样">
-<meta property="og:description" content="前端太菜了,花了两天时间才弄好. 看来还得好好的学css">
-<meta property="og:image" content="https://yoncan.github.io/assert/images/2016-07-04-yunwei-cmdb/11.jpg">
-<meta property="og:image" content="https://yoncan.github.io/assert/images/2016-07-04-yunwei-cmdb/22.jpg">
-<meta property="og:image" content="https://yoncan.github.io/assert/images/2016-07-04-yunwei-cmdb/33.jpg">
-<meta property="og:image" content="https://yoncan.github.io/assert/images/2016-07-04-yunwei-cmdb/44.jpg">
-<meta property="og:image" content="https://yoncan.github.io/assert/images/2016-07-04-yunwei-cmdb/44.jpg">
-<meta property="og:updated_time" content="2017-01-09T16:31:45.528Z">
+<meta property="og:description" content="说明参考: 信号什么是信号？当核心框架的其他地方或另一个 Flask 扩展中发生动作时，信号通过发送 通知来帮助你解耦应用。简言之，信号允许某个发送者通知接收者有事情发生了。
+
+案例使用信号,分四个步骤处理
+
+创建一个信号
+创建接收到信号之后处理的回调函数
+信号绑定回调函数
+发送消息
+
+创建一个信号这里创建了一个mail_send的信号12345678from flask.signals impo">
+<meta property="og:updated_time" content="2017-01-10T15:16:13.402Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="运维后台资产管理的变更和备注记录功能">
-<meta name="twitter:description" content="前端太菜了,花了两天时间才弄好. 看来还得好好的学css">
-<meta name="twitter:image" content="https://yoncan.github.io/assert/images/2016-07-04-yunwei-cmdb/11.jpg">
+<meta name="twitter:title" content="flask signal信号机制">
+<meta name="twitter:description" content="说明参考: 信号什么是信号？当核心框架的其他地方或另一个 Flask 扩展中发生动作时，信号通过发送 通知来帮助你解耦应用。简言之，信号允许某个发送者通知接收者有事情发生了。
+
+案例使用信号,分四个步骤处理
+
+创建一个信号
+创建接收到信号之后处理的回调函数
+信号绑定回调函数
+发送消息
+
+创建一个信号这里创建了一个mail_send的信号12345678from flask.signals impo">
 
 
 
@@ -129,13 +150,13 @@
 
 
 
-  <link rel="canonical" href="https://yoncan.github.io/blog/2016/07/yunwei-cmdb.html"/>
+  <link rel="canonical" href="https://yoncan.github.io/blog/2017/01/flask-signal.html"/>
 
 
 
 
 
-  <title> 运维后台资产管理的变更和备注记录功能 | HI~ 杨小样 </title>
+  <title> flask signal信号机制 | HI~ 杨小样 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -276,7 +297,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://yoncan.github.io/blog/2016/07/yunwei-cmdb.html">
+  <link itemprop="mainEntityOfPage" href="https://yoncan.github.io/blog/2017/01/flask-signal.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="杨小样">
@@ -300,7 +321,7 @@
             
             
               
-                运维后台资产管理的变更和备注记录功能
+                flask signal信号机制
               
             
           </h1>
@@ -313,8 +334,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-04T00:27:30+08:00">
-                2016-07-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-10T22:38:58+08:00">
+                2017-01-10
               </time>
             
 
@@ -347,8 +368,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/blog/2016/07/yunwei-cmdb.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/2016/07/yunwei-cmdb.html" itemprop="commentCount"></span>
+                <a href="/blog/2017/01/flask-signal.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/2017/01/flask-signal.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -358,7 +379,7 @@
 
           
           
-             <span id="/blog/2016/07/yunwei-cmdb.html" class="leancloud_visitors" data-flag-title="运维后台资产管理的变更和备注记录功能">
+             <span id="/blog/2017/01/flask-signal.html" class="leancloud_visitors" data-flag-title="flask signal信号机制">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -383,8 +404,25 @@
       
 
       
-        <p>前端太菜了,花了两天时间才弄好. 看来还得好好的学css</p>
-<p><img src="/assert/images/2016-07-04-yunwei-cmdb/11.jpg" alt="后台的架构图"><br><a id="more"></a><br><img src="/assert/images/2016-07-04-yunwei-cmdb/22.jpg" alt="后台的架构图"><br><img src="/assert/images/2016-07-04-yunwei-cmdb/33.jpg" alt="后台的架构图"><br><img src="/assert/images/2016-07-04-yunwei-cmdb/44.jpg" alt="后台的架构图"><br><img src="/assert/images/2016-07-04-yunwei-cmdb/44.jpg" alt="后台的架构图"></p>
+        <h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>参考: <a href="https://dormousehole.readthedocs.io/en/latest/signals.html" target="_blank" rel="external">信号</a><br>什么是信号？当核心框架的其他地方或另一个 Flask 扩展中发生动作时，信号通过发送 通知来帮助你解耦应用。简言之，信号允许某个发送者通知接收者有事情发生了。</p>
+<hr>
+<h1 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h1><p>使用信号,分四个步骤处理</p>
+<ol>
+<li>创建一个信号</li>
+<li>创建接收到信号之后处理的回调函数</li>
+<li>信号绑定回调函数</li>
+<li>发送消息</li>
+</ol>
+<h2 id="创建一个信号"><a href="#创建一个信号" class="headerlink" title="创建一个信号"></a>创建一个信号</h2><p>这里创建了一个<code>mail_send</code>的信号<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> flask.signals <span class="keyword">import</span> Namespace</div><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, current_app</div><div class="line"></div><div class="line"></div><div class="line">my_signals = Namespace()</div><div class="line">mail_send = my_signals.signal(<span class="string">'mail-send'</span>)</div><div class="line"></div><div class="line">app = Flask(__name__)</div></pre></td></tr></table></figure></p>
+<h2 id="创建接收到信号之后处理的回调函数"><a href="#创建接收到信号之后处理的回调函数" class="headerlink" title="创建接收到信号之后处理的回调函数"></a>创建接收到信号之后处理的回调函数</h2><p>回调函数为<code>mail_send_callback()</code>, 这里接收一个email的数据参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">mail_send_callback</span><span class="params">(sender, email, **extra)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    :param sender: 发送者</div><div class="line">    :param email: 数据参数email</div><div class="line">    :param extra:</div><div class="line">    :return:</div><div class="line">    """</div><div class="line">    <span class="keyword">print</span> <span class="string">'Got email: %s'</span> % email</div></pre></td></tr></table></figure></p>
+<h2 id="信号绑定回调函数-connect"><a href="#信号绑定回调函数-connect" class="headerlink" title="信号绑定回调函数 .connect()"></a>信号绑定回调函数 <code>.connect()</code></h2><p>需要把信号绑定回调函数,用于在接收信号之后的处理步骤.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mail_send.connect(mail_send_callback, app)</div><div class="line"></div><div class="line"><span class="comment"># 该方法的第一个参数是当信号发出时所调用的函数。第二个参数是可选参数，定义一个发送者。 使用 disconnect() 方法可以退订信号</span></div><div class="line"><span class="comment"># mail_sent_callback 为receiver, 一般是一个callback函数</span></div><div class="line"><span class="comment"># app: 为sender 发送者</span></div></pre></td></tr></table></figure>
+<h2 id="发送消息-send"><a href="#发送消息-send" class="headerlink" title="发送消息 .send()"></a>发送消息 <code>.send()</code></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> current_app</div><div class="line"></div><div class="line">mail_send.send(current_app._get_current_object(), email=email)</div><div class="line"></div><div class="line"><span class="comment"># 它的第一个 参数是一个发送者`current_app._get_current_object()`，</span></div><div class="line">其他参数要发送给订阅者的东西，其他参数是可选的,email=email为参数</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<hr>
+<h1 id="完整的测试代码"><a href="#完整的测试代码" class="headerlink" title="完整的测试代码"></a>完整的测试代码</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="comment"># Author: YangCan</span></div><div class="line"><span class="comment"># Email: yoncan@qq.com</span></div><div class="line"><span class="comment"># About: https://yoncan.github.io</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, current_app, request, jsonify</div><div class="line"><span class="keyword">from</span> flask.signals <span class="keyword">import</span> Namespace</div><div class="line"></div><div class="line"></div><div class="line">app = Flask(__name__)</div><div class="line"></div><div class="line">my_signals = Namespace()</div><div class="line"></div><div class="line">mail_send = my_signals.signal(<span class="string">'mail-sent'</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">mail_send_callback</span><span class="params">(sender, email, **extra)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    :param sender:</div><div class="line">    :param email:</div><div class="line">    :param extra:</div><div class="line">    :return:</div><div class="line">    """</div><div class="line">    print(<span class="string">"sent mail to %s"</span>, email)</div><div class="line"></div><div class="line"></div><div class="line">mail_send.connect(mail_send_callback, app)</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">@app.route('/', methods=['POST'])</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_send_mail</span><span class="params">()</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    :return:</div><div class="line">    """</div><div class="line">    req_data = request.get_json()</div><div class="line"></div><div class="line">    email = req_data.get(<span class="string">'email'</span>, <span class="keyword">None</span>)</div><div class="line"></div><div class="line">    <span class="comment"># 发送signal</span></div><div class="line">    mail_send.send(current_app._get_current_object(), email=email)</div><div class="line"></div><div class="line">    <span class="keyword">return</span> jsonify(&#123;</div><div class="line">        <span class="string">'code'</span>: <span class="number">0</span>,</div><div class="line">        <span class="string">'msg'</span>: <span class="string">'send to &#123;0&#125; ok '</span>.format(email)</div><div class="line">    &#125;)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    app.run(host=<span class="string">'0.0.0.0'</span>, port=<span class="number">8000</span>, debug=<span class="keyword">True</span>)</div></pre></td></tr></table></figure>
+<p>命令行测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># curl -H &quot;Content-Type: application/json&quot; -XPOST    http://192.168.10.1:8000/ -d &apos;&#123;&quot;email&quot;: &quot;yangcan@local&quot;&#125;&apos;</div><div class="line">&#123;</div><div class="line">  &quot;code&quot;: 0, </div><div class="line">  &quot;msg&quot;: &quot;send to yangcan@local ok &quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在服务端,可以看到的输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(&apos;sent mail to %s&apos;, u&apos;yangcan@local&apos;)</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -417,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2016/03/ansible-api.html" rel="next" title="Ansible 2.0 最新版本的API封装">
-                <i class="fa fa-chevron-left"></i> Ansible 2.0 最新版本的API封装
+              <a href="/blog/2017/01/flask-url-regex.html" rel="next" title="flask route支持正则">
+                <i class="fa fa-chevron-left"></i> flask route支持正则
               </a>
             
           </div>
@@ -426,10 +464,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2016/09/flask-sqlalchemy-seriablize.html" rel="prev" title="flask sqlalchemy序列化查询结果">
-                flask sqlalchemy序列化查询结果 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -444,10 +478,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="blog/2016/07/yunwei-cmdb.html"
-     data-title="运维后台资产管理的变更和备注记录功能"
+        <div class="ds-share flat" data-thread-key="blog/2017/01/flask-signal.html"
+     data-title="flask signal信号机制"
      data-content=""
-     data-url="https://yoncan.github.io/blog/2016/07/yunwei-cmdb.html">
+     data-url="https://yoncan.github.io/blog/2017/01/flask-signal.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -477,8 +511,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="blog/2016/07/yunwei-cmdb.html"
-           data-title="运维后台资产管理的变更和备注记录功能" data-url="https://yoncan.github.io/blog/2016/07/yunwei-cmdb.html">
+      <div class="ds-thread" data-thread-key="blog/2017/01/flask-signal.html"
+           data-title="flask signal信号机制" data-url="https://yoncan.github.io/blog/2017/01/flask-signal.html">
       </div>
     
   </div>
@@ -502,8 +536,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/logo.jpg"
@@ -574,6 +617,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例"><span class="nav-number">2.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个信号"><span class="nav-number">2.1.</span> <span class="nav-text">创建一个信号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建接收到信号之后处理的回调函数"><span class="nav-number">2.2.</span> <span class="nav-text">创建接收到信号之后处理的回调函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信号绑定回调函数-connect"><span class="nav-number">2.3.</span> <span class="nav-text">信号绑定回调函数 .connect()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发送消息-send"><span class="nav-number">2.4.</span> <span class="nav-text">发送消息 .send()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完整的测试代码"><span class="nav-number">3.</span> <span class="nav-text">完整的测试代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
