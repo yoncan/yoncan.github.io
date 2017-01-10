@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yoncan.github.io/blog/2017/01/rundeck-notice.html</loc>
+    
+    <lastmod>2017-01-10T13:45:07.417Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yoncan.github.io/blog/2017/01/flask-url-regex.html</loc>
+    
+    <lastmod>2017-01-10T13:45:07.417Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yoncan.github.io/blog/2016/12/python-metaclass.html</loc>
+    
+    <lastmod>2017-01-10T13:45:07.402Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yoncan.github.io/blog/2016/07/yunwei-cmdb.html</loc>
     
     <lastmod>2017-01-09T16:31:45.528Z</lastmod>
@@ -37,6 +58,13 @@
   </url>
   
   <url>
+    <loc>https://yoncan.github.io/categories/index.html</loc>
+    
+    <lastmod>2017-01-09T15:31:51.649Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yoncan.github.io/tags/index.html</loc>
     
     <lastmod>2017-01-09T15:31:51.649Z</lastmod>
@@ -44,9 +72,9 @@
   </url>
   
   <url>
-    <loc>https://yoncan.github.io/categories/index.html</loc>
+    <loc>https://yoncan.github.io/blog/2016/12/python-itertools.html</loc>
     
-    <lastmod>2017-01-09T15:31:51.649Z</lastmod>
+    <lastmod>2017-01-09T15:31:51.639Z</lastmod>
     
   </url>
   
@@ -58,9 +86,9 @@
   </url>
   
   <url>
-    <loc>https://yoncan.github.io/blog/2016/12/python-itertools.html</loc>
+    <loc>https://yoncan.github.io/blog/2016/12/ansible-extend-setup.html</loc>
     
-    <lastmod>2017-01-09T15:31:51.639Z</lastmod>
+    <lastmod>2017-01-09T15:31:51.629Z</lastmod>
     
   </url>
   
@@ -73,13 +101,6 @@
   
   <url>
     <loc>https://yoncan.github.io/blog/2016/12/python-study.html</loc>
-    
-    <lastmod>2017-01-09T15:31:51.629Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yoncan.github.io/blog/2016/12/ansible-extend-setup.html</loc>
     
     <lastmod>2017-01-09T15:31:51.629Z</lastmod>
     

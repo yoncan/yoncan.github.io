@@ -271,6 +271,315 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://yoncan.github.io/blog/2017/01/flask-url-regex.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="杨小样">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/logo.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="HI~ 杨小样">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="HI~ 杨小样" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/2017/01/flask-url-regex.html" itemprop="url">
+                  flask route支持正则
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-10T16:51:19+08:00">
+                2017-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/flask/" itemprop="url" rel="index">
+                    <span itemprop="name">flask</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/blog/2017/01/flask-url-regex.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/2017/01/flask-url-regex.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>flask跟web.py差别挺大的，尤其是在路由管理这块。web.py把所有的路由都集中在一起，我比较喜欢这种方式。最近用flask，发现@app.route(‘<URL>‘)中URL只支持string、int、float、path 4种类型，并不支持正则.</p>
+<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p>通过运行如下代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</div><div class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    app = Flask(__name__)</div><div class="line">    pprint(app.url_map.converters)</div></pre></td></tr></table></figure></p>
+<p>可以获取Flask默认支持的转换器</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;'any': &lt;class 'werkzeug.routing.AnyConverter'&gt;,</div><div class="line"> 'default': &lt;class 'werkzeug.routing.UnicodeConverter'&gt;,</div><div class="line"> 'float': &lt;class 'werkzeug.routing.FloatConverter'&gt;,</div><div class="line"> 'int': &lt;class 'werkzeug.routing.IntegerConverter'&gt;,</div><div class="line"> 'path': &lt;class 'werkzeug.routing.PathConverter'&gt;,</div><div class="line"> 'string': &lt;class 'werkzeug.routing.UnicodeConverter'&gt;,</div><div class="line"> 'uuid': &lt;class 'werkzeug.routing.UUIDConverter'&gt;&#125;</div></pre></td></tr></table></figure>
+<p>那如何创建一个新的路由解析转化器呢？<br>在Flask的app.py里有个简单的例子,这个例子是创建了一个regex类型的路由转换器：</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/2017/01/flask-url-regex.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://yoncan.github.io/blog/2017/01/rundeck-notice.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="杨小样">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/logo.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="HI~ 杨小样">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="HI~ 杨小样" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/2017/01/rundeck-notice.html" itemprop="url">
+                  rundeck使用的一些注意事项
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-10T15:06:58+08:00">
+                2017-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/rundeck/" itemprop="url" rel="index">
+                    <span itemprop="name">rundeck</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/blog/2017/01/rundeck-notice.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/2017/01/rundeck-notice.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>记录rundeck在使用的过程中的一些注意事项.</p>
+<h1 id="SSH端口改变了怎么处理"><a href="#SSH端口改变了怎么处理" class="headerlink" title="SSH端口改变了怎么处理?"></a>SSH端口改变了怎么处理?</h1><p>我们知道rundeck是基于ssh的,而rundeck提供的配置文件中,没有配置ssh端口的选项.</p>
+<ul>
+<li><strong>我们可以在新建项目的时候,在前端的配置文件中按如下的配置</strong></li>
+</ul>
+<p>“Default Node Executor” 选择 “Script Execution”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -p 11022 -i /etc/rundeck/.sshkeys/publisher -o &quot;StrictHostKeyChecking no&quot; $&#123;node.username&#125;@$&#123;node.hostname&#125; $&#123;exec.command&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="/assert/images/2017-01-10-rundeck-notice/node-script-execution.jpg" alt="ssh执行器"></p>
+<p>“Default Node File Copier” 选择 “Script Execution”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rsync -rvzt --exclude=&apos;.svn/&apos; --exclude=&apos;.git/&apos; --exclude=&apos;.idea/&apos; -e &apos;ssh -p 11022 -i /etc/rundeck/.sshkeys/publisher -o StrictHostKeyChecking=false&apos; $&#123;file-copy.file&#125;  $&#123;node.username&#125;@$&#123;node.hostname&#125;:$&#123;file-copy.destination&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="/assert/images/2017-01-10-rundeck-notice/node-filecopy-script-execution.jpg" alt="ssh文件拷贝执行器"></p>
+<ul>
+<li><strong>如果项目已经配置好了,也可以在对应项目的<code>etc/project.properties</code>文件中定义</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Tue Jan 10 15:16:11 CST 2017</span></div><div class="line"><span class="comment">#edit below</span></div><div class="line"></div><div class="line">project.description=我的第一个项目</div><div class="line">project.name=my_first_project</div><div class="line">project.nodeCache.delay=<span class="number">30</span></div><div class="line">project.nodeCache.enabled=true</div><div class="line">project.ssh-keypath=/etc/rundeck/.sshkeys/publisher</div><div class="line">resources.source<span class="number">.1</span>.config.file=/data/rundeck/projects/ad.uu66.com/etc/resources.xml</div><div class="line">resources.source<span class="number">.1</span>.config.format=resourcexml</div><div class="line">resources.source<span class="number">.1</span>.config.generateFileAutomatically=true</div><div class="line">resources.source<span class="number">.1</span>.config.includeServerNode=true</div><div class="line">resources.source<span class="number">.1</span>.config.requireFileExists=false</div><div class="line">resources.source<span class="number">.1</span>.type=file</div><div class="line"><span class="comment"># file copy define</span></div><div class="line">service.FileCopier.default.provider=script-copy</div><div class="line">plugin.script-copy.default.command=rsync -rvzt --exclude\=<span class="string">'.svn/'</span> --exclude\=<span class="string">'.git/'</span> --exclude\=<span class="string">'.idea/'</span> -e <span class="string">'ssh -p 11022 -i /etc/rundeck/.sshkeys/publisher -o StrictHostKeyChecking\=false'</span> $&#123;file-copy.file&#125;  $&#123;node.username&#125;@$&#123;node.hostname&#125;\:$&#123;file-copy.destination&#125;</div><div class="line">plugin.script-copy.default.shell=bash -c</div><div class="line"><span class="comment"># node execution define</span></div><div class="line">service.NodeExecutor.default.provider=script-<span class="keyword">exec</span></div><div class="line">plugin.script-<span class="keyword">exec</span>.default.command=ssh -p <span class="number">11022</span> -i /etc/rundeck/.sshkeys/publisher -o <span class="string">"StrictHostKeyChecking no"</span> $&#123;node.username&#125;@$&#123;node.hostname&#125; $&#123;<span class="keyword">exec</span>.command&#125;</div><div class="line">plugin.script-<span class="keyword">exec</span>.default.shell=bash -c</div></pre></td></tr></table></figure>
+<p>注意提前在各个node上做好密钥验证</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/2017/01/rundeck-notice.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="https://yoncan.github.io/blog/2017/01/my-anger.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1034,6 +1343,170 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://yoncan.github.io/blog/2016/12/python-metaclass.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="杨小样">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/logo.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="HI~ 杨小样">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="HI~ 杨小样" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/2016/12/python-metaclass.html" itemprop="url">
+                  深刻理解Python中的元类(metaclass)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-10T15:56:30+08:00">
+                2016-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/blog/2016/12/python-metaclass.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/2016/12/python-metaclass.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote><p>转载于 <a href="http://blog.jobbole.com/21351/">伯乐在线</a> </p>
+<footer><strong>http://blog.jobbole.com/21351/</strong></footer></blockquote>
+<h1 id="译注"><a href="#译注" class="headerlink" title="译注"></a>译注</h1><p>这是一篇在<a href="http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python">Stack overflow</a> 上很热的帖子。提问者自称已经掌握了有关Python OOP编程中的各种概念，但始终觉得元类(metaclass)难以理解。他知道这肯定和自省有关，但仍然觉得不太明白，希望大家可以给出一些实际的例子和代码片段以帮助理解，以及在什么情况下需要进行元编程。于是e-satis同学给出了神一般的回复，该回复获得了985点的赞同点数，更有人评论说这段回复应该加入到Python的官方文档中去。而e-satis同学本人在Stack Overflow中的声望积分也高达64271分。以下就是这篇精彩的回复（提示：非常长）<br><img src="/assert/images/2016-12-10-python-metaclass/python-icon.jpg" alt="python"></p>
+<hr>
+<h1 id="类也是对象"><a href="#类也是对象" class="headerlink" title="类也是对象"></a>类也是对象</h1><p>在理解元类之前，你需要先掌握Python中的类。Python中类的概念借鉴于Smalltalk，这显得有些奇特。在大多数编程语言中，类就是一组用来描述如何生成一个对象的代码段。在Python中这一点仍然成立：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">ObjectCreator</span><span class="params">(object)</span>:</span></div><div class="line">…       <span class="keyword">pass</span></div><div class="line">…</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>my_object = ObjectCreator()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> my_object</div><div class="line">&lt;__main__.ObjectCreator object at <span class="number">0x8974f2c</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>但是，Python中的类还远不止如此。类同样也是一种对象。是的，没错，就是对象。只要你使用关键字class，Python解释器在执行的时候就会创建一个对象。下面的代码段：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">ObjectCreator</span><span class="params">(object)</span>:</span></div><div class="line">…       <span class="keyword">pass</span></div><div class="line">…</div></pre></td></tr></table></figure>
+<p>将在内存中创建一个对象，名字就是ObjectCreator。<strong>这个对象（类）自身拥有创建对象（类实例）的能力，而这就是为什么它是一个类的原因</strong>。但是，它的本质仍然是一个对象，于是乎你可以对它做如下的操作：</p>
+<ol>
+<li>你可以将它赋值给一个变量</li>
+<li>你可以拷贝它</li>
+<li>你可以为它增加属性</li>
+<li>你可以将它作为函数参数进行传递</li>
+</ol>
+<p>下面是示例：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print ObjectCreator     # 你可以打印一个类，因为它其实也是一个对象</div><div class="line">&lt;class '__main__.ObjectCreator'&gt;</div><div class="line">&gt;&gt;&gt; def echo(o):</div><div class="line">…       print o</div><div class="line">…</div><div class="line">&gt;&gt;&gt; echo(ObjectCreator)                 # 你可以将类做为参数传给函数</div><div class="line">&lt;class '__main__.ObjectCreator'&gt;</div><div class="line">&gt;&gt;&gt; print hasattr(ObjectCreator, 'new_attribute')</div><div class="line">Fasle</div><div class="line">&gt;&gt;&gt; ObjectCreator.new_attribute = 'foo' #  你可以为类增加属性</div><div class="line">&gt;&gt;&gt; print hasattr(ObjectCreator, 'new_attribute')</div><div class="line">True</div><div class="line">&gt;&gt;&gt; print ObjectCreator.new_attribute</div><div class="line">foo</div><div class="line">&gt;&gt;&gt; ObjectCreatorMirror = ObjectCreator # 你可以将类赋值给一个变量</div><div class="line">&gt;&gt;&gt; print ObjectCreatorMirror()</div><div class="line">&lt;__main__.ObjectCreator object at 0x8997b4c&gt;</div></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="动态地创建类"><a href="#动态地创建类" class="headerlink" title="动态地创建类"></a>动态地创建类</h1><p>因为类也是对象，你可以在运行时动态的创建它们，就像其他任何对象一样。首先，你可以在函数中创建类，使用class关键字即可。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; def choose_class(name):</div><div class="line">…       if name == 'foo':</div><div class="line">…           class Foo(object):</div><div class="line">…               pass</div><div class="line">…           return Foo     # 返回的是类，不是类的实例</div><div class="line">…       else:</div><div class="line">…           class Bar(object):</div><div class="line">…               pass</div><div class="line">…           return Bar</div><div class="line">…</div><div class="line">&gt;&gt;&gt; MyClass = choose_class('foo')</div><div class="line">&gt;&gt;&gt; print MyClass              # 函数返回的是类，不是类的实例</div><div class="line">&lt;class '__main__'.Foo&gt;</div><div class="line">&gt;&gt;&gt; print MyClass()            # 你可以通过这个类创建类实例，也就是对象</div><div class="line">&lt;__main__.Foo object at 0x89c6d4c&gt;</div></pre></td></tr></table></figure>
+<p>但这还不够动态，因为你仍然需要自己编写整个类的代码。由于类也是对象，所以它们必须是通过什么东西来生成的才对。当你使用class关键字时，Python解释器自动创建这个对象。但就和Python中的大多数事情一样，Python仍然提供给你手动处理的方法。还记得内建函数type吗？这个古老但强大的函数能够让你知道一个对象的类型是什么，就像这样：</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/2016/12/python-metaclass.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="https://yoncan.github.io/blog/2016/11/yunwei-houtai.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1326,300 +1799,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://yoncan.github.io/blog/2016/07/yunwei-cmdb.html">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="杨小样">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/logo.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="HI~ 杨小样">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="HI~ 杨小样" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/2016/07/yunwei-cmdb.html" itemprop="url">
-                  运维后台资产管理的变更和备注记录功能
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-04T00:27:30+08:00">
-                2016-07-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/flask/" itemprop="url" rel="index">
-                    <span itemprop="name">flask</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/blog/2016/07/yunwei-cmdb.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/2016/07/yunwei-cmdb.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>前端太菜了,花了两天时间才弄好. 看来还得好好的学css</p>
-<p><img src="/assert/images/2016-07-04-yunwei-cmdb/11.jpg" alt="后台的架构图"><br>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/2016/07/yunwei-cmdb.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://yoncan.github.io/blog/2016/03/ansible-api.html">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="杨小样">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/logo.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="HI~ 杨小样">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="HI~ 杨小样" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/2016/03/ansible-api.html" itemprop="url">
-                  Ansible 2.0 最新版本的API封装
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-03-06T00:24:10+08:00">
-                2016-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ansible/" itemprop="url" rel="index">
-                    <span itemprop="name">ansible</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/blog/2016/03/ansible-api.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/2016/03/ansible-api.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>ansible 2.0之后的api变更了, 下面是封装好了2.0之后的api使用方法</p>
-<p>具体的使用, 方法内有案例. 如果看过ansible的源码, 就可以容易理解这个API的封装. 其中要说的是 self.options 这个.  这个是构建命令行参数的, 当我们使用命令行上去执行指令ansible -i /etc/ansible/hosts localhost -m ping 时, 虽然只带了-i 和 -m 指定模块, 但是有很多默认值. 最终的所有参数的设置, 都是附加到self.options的</p>
-<p>想去了解ansible API的同学, 建议去 自己分析下源码 /usr/lib/python2.6/site-packages/ansible/cli/adhoc.py; 就很容易明白了</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="comment"># Author: Ycan</span></div><div class="line"><span class="comment"># More: http://www.ehco.me/</span></div><div class="line"><span class="comment"># Ansible API</span></div><div class="line"><span class="comment"># Ansible Version &gt;=2.0</span></div><div class="line"> </div><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> (absolute_import, division, print_function)</div><div class="line"> </div><div class="line"><span class="keyword">from</span> ansible.executor.task_queue_manager <span class="keyword">import</span> TaskQueueManager</div><div class="line"><span class="keyword">from</span> ansible.inventory <span class="keyword">import</span> Inventory</div><div class="line"><span class="keyword">from</span> ansible.parsing.dataloader <span class="keyword">import</span> DataLoader</div><div class="line"><span class="keyword">from</span> ansible.vars <span class="keyword">import</span> VariableManager</div><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</div><div class="line"><span class="keyword">from</span> ansible.playbook.play <span class="keyword">import</span> Play</div><div class="line"><span class="keyword">from</span> ansible <span class="keyword">import</span> constants <span class="keyword">as</span> C</div><div class="line"><span class="keyword">from</span> ansible.parsing.splitter <span class="keyword">import</span> parse_kv</div><div class="line"><span class="keyword">from</span> ansible.executor.playbook_executor <span class="keyword">import</span> PlaybookExecutor</div><div class="line"><span class="keyword">from</span> ansible.utils.vars <span class="keyword">import</span> load_extra_vars</div><div class="line"><span class="keyword">import</span> os</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoGoAnsibleEorror</span><span class="params">(Exception)</span>:</span> <span class="keyword">pass</span></div><div class="line"> </div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoGoMinix</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="string">""" 列出一些基础的options</span></div><div class="line">    subset: '127.0.0.1'</div><div class="line">    extra_vars: ["name='yagcan'"] 或者 json格式也可以</div><div class="line">    tags: "test,test01"</div><div class="line">    """</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, inventory_file=None, passwords=None, verbosity=<span class="number">0</span>, cb=<span class="string">'minimal'</span>)</span>:</span></div><div class="line"> </div><div class="line">        <span class="keyword">if</span> passwords <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            passwords = &#123;<span class="string">'conn_pass'</span>: <span class="string">''</span>, <span class="string">'become_pass'</span>: <span class="string">''</span>&#125;</div><div class="line"> </div><div class="line">        <span class="keyword">if</span> inventory_file <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">            inventory_file = C.DEFAULT_HOST_LIST</div><div class="line"> </div><div class="line">        self.verbosity = verbosity</div><div class="line">        self.inventory_file = inventory_file</div><div class="line"> </div><div class="line">        self.passwords = passwords</div><div class="line"> </div><div class="line">        self.cb = cb</div><div class="line"> </div><div class="line">        self._set_option = <span class="keyword">False</span></div><div class="line">        self._set_hosts = <span class="keyword">False</span></div><div class="line"> </div><div class="line">        <span class="comment"># initialize needed objects</span></div><div class="line">        self.variable_manager = VariableManager()</div><div class="line"> </div><div class="line">        self.loader = DataLoader()</div><div class="line"> </div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_base_option</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="string">""" base option"""</span></div><div class="line">        <span class="keyword">return</span> dict(</div><div class="line">            connection=C.DEFAULT_TRANSPORT,</div><div class="line">            forks=C.DEFAULT_FORKS,</div><div class="line">            become=<span class="keyword">False</span>,</div><div class="line">            become_method=C.DEFAULT_BECOME_METHOD,</div><div class="line">            become_user=<span class="keyword">None</span>,</div><div class="line">            check=<span class="keyword">False</span>,</div><div class="line">            module_path=<span class="keyword">None</span>,</div><div class="line">            remote_user=C.DEFAULT_REMOTE_USER,</div><div class="line">            private_key_file=C.DEFAULT_PRIVATE_KEY_FILE,</div><div class="line">            ssh_common_args=<span class="string">''</span>,</div><div class="line">            sftp_extra_args=<span class="string">''</span>,</div><div class="line">            scp_extra_args=<span class="string">''</span>,</div><div class="line">            ssh_extra_args=<span class="string">''</span>,</div><div class="line">            verbosity=self.verbosity,</div><div class="line">            listhosts=<span class="keyword">False</span>,</div><div class="line">            listtags=<span class="keyword">False</span>,</div><div class="line">            listtasks=<span class="keyword">False</span>,</div><div class="line">            syntax=<span class="keyword">False</span>,</div><div class="line">            inventory=<span class="keyword">None</span></div><div class="line">        )</div><div class="line"> </div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">limit_hosts</span><span class="params">(self, host_lists)</span>:</span></div><div class="line">        <span class="comment"># --limit</span></div><div class="line">        self._set_hosts = <span class="keyword">True</span></div><div class="line"> </div><div class="line">        self.host_lists = host_lists</div><div class="line"> </div><div class="line">        <span class="keyword">if</span> isinstance(host_lists, list):</div><div class="line">            self.host_lists = <span class="string">','</span>.join(host_lists)</div><div class="line"> </div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_option</span><span class="params">(self, **kwargs)</span>:</span></div><div class="line">        <span class="string">""" set Options</span></div><div class="line">        usage:</div><div class="line">            base_option = self._base_option()</div><div class="line">            _option = base_option.copy()</div><div class="line">            _option.upadte(&#123;'verbosity': 1, 'forks': 20&#125;)</div><div class="line">            self.set_option(**_option)</div><div class="line">        """</div><div class="line"> </div><div class="line">        self._set_option = <span class="keyword">True</span></div><div class="line"> </div><div class="line">        self.options = self._options(**kwargs)</div><div class="line"> </div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_options</span><span class="params">(self, **kwargs)</span>:</span></div><div class="line">        <span class="string">""" set options</span></div><div class="line">        """</div><div class="line">        keys = kwargs.keys()</div><div class="line">        Options = namedtuple(<span class="string">'Options'</span>, keys)</div><div class="line">        v = Options(**kwargs)</div><div class="line"> </div><div class="line">        <span class="keyword">if</span> v.inventory <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">            self.inventory_file = v.inventory</div><div class="line"> </div><div class="line">        <span class="keyword">return</span> v</div><div class="line"> </div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_prepare_run</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="comment"># initialize needed objects</span></div><div class="line"> </div><div class="line">        <span class="comment"># when not set_option</span></div><div class="line">        <span class="keyword">if</span> self._set_option <span class="keyword">is</span> <span class="keyword">False</span>:</div><div class="line">            _base_option = self._base_option().copy()</div><div class="line">            self.options = self._options(**_base_option)</div><div class="line"> </div><div class="line">        self.inventory = Inventory(loader=self.loader, variable_manager=self.variable_manager,</div><div class="line">                                   host_list=self.inventory_file)</div><div class="line"> </div><div class="line">        self.variable_manager.set_inventory(self.inventory)</div><div class="line"> </div><div class="line">        <span class="keyword">if</span> self._set_hosts:</div><div class="line">            self.inventory.subset(self.host_lists)</div><div class="line"> </div><div class="line">        <span class="keyword">if</span> len(self.inventory.list_hosts()) == <span class="number">0</span>:</div><div class="line">            <span class="keyword">raise</span> DoGoAnsibleEorror(<span class="string">u'match any hosts empty..'</span>)</div><div class="line"> </div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, play_data)</span>:</span></div><div class="line">        <span class="keyword">pass</span></div><div class="line"> </div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoGoAdHocCLI</span><span class="params">(DoGoMinix)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kwargs)</span>:</span></div><div class="line">        <span class="string">""" 案例:</span></div><div class="line">        adh = DoGoAdHocCLI(inventory_file='/etc/ansible/hosts')</div><div class="line">        _base_options = adh._base_option()</div><div class="line">        options = _base_options.copy()</div><div class="line">        options.update(&#123;</div><div class="line">            'inventory': '/etc/ansible/hosts',</div><div class="line">            'forks': 10</div><div class="line">        &#125;)</div><div class="line">        adh.set_option(**options)</div><div class="line"> </div><div class="line">        play_data = dict(</div><div class="line">            name="DoGo CMDB gather facts",</div><div class="line">            hosts=['localhost'],</div><div class="line">            gather_facts=True,</div><div class="line">            tasks=[dict(action=dict(module='setup'))]</div><div class="line">        )</div><div class="line">        return adh.run(play_data)</div><div class="line"> </div><div class="line">        """</div><div class="line"> </div><div class="line">        super(DoGoAdHocCLI, self).__init__(*args, **kwargs)</div><div class="line"> </div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, play_data)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        play_data = dict(</div><div class="line">            name="Ansible Ad-Hoc",</div><div class="line">            hosts=pattern,</div><div class="line">            gather_facts=True,</div><div class="line">            tasks=[dict(action=dict(module='service', args=&#123;'name': 'vsftpd', 'state': 'restarted'&#125;), async=async, poll=poll)]</div><div class="line">        )</div><div class="line">        """</div><div class="line">        self._prepare_run()</div><div class="line"> </div><div class="line">        play = Play().load(play_data, variable_manager=self.variable_manager, loader=self.loader)</div><div class="line"> </div><div class="line">        tqm = <span class="keyword">None</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            tqm = TaskQueueManager(</div><div class="line">                inventory=self.inventory,</div><div class="line">                variable_manager=self.variable_manager,</div><div class="line">                loader=self.loader,</div><div class="line">                options=self.options,</div><div class="line">                passwords=self.passwords,</div><div class="line">                stdout_callback=self.cb,</div><div class="line">                run_additional_callbacks=C.DEFAULT_LOAD_CALLBACK_PLUGINS,</div><div class="line">                run_tree=<span class="keyword">False</span>,</div><div class="line">            )</div><div class="line"> </div><div class="line">            result = tqm.run(play)</div><div class="line">            <span class="keyword">return</span> result</div><div class="line">        <span class="keyword">finally</span>:</div><div class="line">            <span class="keyword">if</span> tqm:</div><div class="line">                tqm.cleanup()</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoGoPlaybookCLI</span><span class="params">(DoGoMinix)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kwargs)</span>:</span></div><div class="line">        <span class="string">""" example:</span></div><div class="line">            play_book = get_ansible_task_file('task_rsync.yml')</div><div class="line"> </div><div class="line">            forks = len(host_list)</div><div class="line">            if forks == 0:</div><div class="line">                raise ValueError('host_list empty....')</div><div class="line"> </div><div class="line">            if forks &gt; 10: forks = 10</div><div class="line"> </div><div class="line">            pb = DoGoPlaybookCLI(inventory_file='/etc/ansible/hosts', cb='skippy')</div><div class="line"> </div><div class="line">            _base_options = pb._base_option()</div><div class="line">            options = _base_options.copy()</div><div class="line">            options.update(&#123;</div><div class="line">                'inventory': '/etc/ansible/hosts',</div><div class="line">                'forks': forks,</div><div class="line">                'tags': 'add_rsync_module',</div><div class="line">                'subset': ','.join(host_list),</div><div class="line">                'extra_vars': [json.dumps(&#123;'module': module&#125;)]</div><div class="line">            &#125;)</div><div class="line">            pb.set_option(**options)</div><div class="line"> </div><div class="line">            pb.limit_hosts(','.join(host_list))</div><div class="line"> </div><div class="line">            if not os.path.isfile(play_book):</div><div class="line">                raise OSError('task file &#123;0&#125; not found!'.format(play_book))</div><div class="line"> </div><div class="line">            kw = &#123;'playbooks': [play_book]&#125;</div><div class="line">            return pb.run(**kw)</div><div class="line"> </div><div class="line">        """</div><div class="line"> </div><div class="line">        super(DoGoPlaybookCLI, self).__init__(*args, **kwargs)</div><div class="line"> </div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, playbooks)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        param: `playbooks`: type string or list, example: ['/etc/ansible/test.yml'], '/etc/ansible/test1.yml, /etc/ansible/test2.yml'</div><div class="line">        param: `limit`:  eq --limit ''</div><div class="line">        """</div><div class="line">        self._prepare_run()</div><div class="line">        self.variable_manager.extra_vars = load_extra_vars(loader=self.loader, options=self.options)</div><div class="line"> </div><div class="line">        results = <span class="number">0</span></div><div class="line"> </div><div class="line">        <span class="keyword">if</span> isinstance(playbooks, basestring):</div><div class="line">            <span class="keyword">if</span> <span class="string">','</span> <span class="keyword">in</span> playbooks:</div><div class="line">                playbooks = [pl.strip() <span class="keyword">for</span> pl <span class="keyword">in</span> playbooks.split(<span class="string">','</span>) <span class="keyword">if</span> os.path.exists(pl)]</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                playbooks = [playbooks] <span class="keyword">if</span> os.path.exists(playbooks) <span class="keyword">else</span> []</div><div class="line"> </div><div class="line">        <span class="keyword">if</span> len(playbooks) == <span class="number">0</span>:</div><div class="line">            <span class="keyword">raise</span> DoGoAnsibleEorror(<span class="string">u'&#123;0&#125; invalid'</span>.format(playbooks))</div><div class="line"> </div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            <span class="comment"># create the playbook executor, which manages running the plays via a task queue manager</span></div><div class="line">            pbex = PlaybookExecutor(playbooks=playbooks, inventory=self.inventory,</div><div class="line">                                    variable_manager=self.variable_manager,</div><div class="line">                                    loader=self.loader, options=self.options, passwords=self.passwords)</div><div class="line"> </div><div class="line">            results = pbex.run()</div><div class="line">        <span class="keyword">except</span> Exception, ex:</div><div class="line">            results = str(ex)</div><div class="line">        <span class="keyword">finally</span>:</div><div class="line">            <span class="keyword">return</span> results</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_setup</span><span class="params">(host_list=[])</span>:</span></div><div class="line">    <span class="comment"># 测试setup模块</span></div><div class="line">    <span class="keyword">if</span> host_list:</div><div class="line">        adh = DoGoAdHocCLI(inventory_file=<span class="string">'/etc/ansible/hosts'</span>)</div><div class="line">        _base_options = adh._base_option()</div><div class="line">        options = _base_options.copy()</div><div class="line">        options.update(&#123;</div><div class="line">            <span class="string">'inventory'</span>: <span class="string">'/etc/ansible/hosts'</span></div><div class="line">        &#125;)</div><div class="line">        adh.set_option(**options)</div><div class="line"> </div><div class="line">        play_data = dict(</div><div class="line">            name=<span class="string">"DoGo CMDB gather facts"</span>,</div><div class="line">            hosts=host_list,</div><div class="line">            gather_facts=<span class="keyword">True</span>,</div><div class="line">            tasks=[dict(action=dict(module=<span class="string">'setup'</span>))]</div><div class="line">        )</div><div class="line">        <span class="keyword">return</span> adh.run(play_data)</div><div class="line">    <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"> </div><div class="line"> </div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    test_setup(host_list=[<span class="string">'127.0.0.1'</span>])</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1658,7 +1844,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1666,7 +1852,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1675,7 +1861,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
