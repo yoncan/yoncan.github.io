@@ -72,13 +72,6 @@
   </url>
   
   <url>
-    <loc>https://yoncan.github.io/blog/2016/12/python-itertools.html</loc>
-    
-    <lastmod>2017-01-09T15:31:51.639Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yoncan.github.io/about/index.html</loc>
     
     <lastmod>2017-01-09T15:31:51.639Z</lastmod>
@@ -86,9 +79,9 @@
   </url>
   
   <url>
-    <loc>https://yoncan.github.io/blog/2016/12/ansible-extend-setup.html</loc>
+    <loc>https://yoncan.github.io/blog/2016/12/python-itertools.html</loc>
     
-    <lastmod>2017-01-09T15:31:51.629Z</lastmod>
+    <lastmod>2017-01-09T15:31:51.639Z</lastmod>
     
   </url>
   
@@ -101,6 +94,13 @@
   
   <url>
     <loc>https://yoncan.github.io/blog/2016/12/python-study.html</loc>
+    
+    <lastmod>2017-01-09T15:31:51.629Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yoncan.github.io/blog/2016/12/ansible-extend-setup.html</loc>
     
     <lastmod>2017-01-09T15:31:51.629Z</lastmod>
     
