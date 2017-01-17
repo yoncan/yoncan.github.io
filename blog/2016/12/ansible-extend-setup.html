@@ -100,7 +100,7 @@
 取消了原本关于磁盘单位的自动格式,改为磁盘的最大单位支持到GB,如果需要和原生一下,那在代码文件的 314-317 行注释
 
 依赖说明底层的raid和磁盘信息收集需要安装MegaCli64包,关于安装方法,自行解决.另外关于raid级别,怎么推算成raid5或者raid1+0的. 因">
-<meta property="og:updated_time" content="2017-01-09T15:31:51.629Z">
+<meta property="og:updated_time" content="2017-01-10T07:02:22.747Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在ansbile的setup上的一些扩展功能">
 <meta name="twitter:description" content="说明为了配合做的资产信息搜集, 直接在setup模块上加上了raid卡,底层的物理磁盘,内存等相关信息.
@@ -412,6 +412,27 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>分享即快乐，谢谢你请思哲小朋友吃糖!</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/assert/images/weixin.jpg" alt="杨小样 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/assert/images/zhihubao.jpg" alt="杨小样 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
