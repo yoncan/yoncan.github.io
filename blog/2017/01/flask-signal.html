@@ -93,9 +93,7 @@
 创建一个信号
 创建接收到信号之后处理的回调函数
 信号绑定回调函数
-发送消息
-
-创建一个信号这里创建了一个mail_send的信号12345678from flask.signals impo">
+发送消息">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flask signal信号机制">
 <meta property="og:url" content="https://yoncan.github.io/blog/2017/01/flask-signal.html">
@@ -107,10 +105,8 @@
 创建一个信号
 创建接收到信号之后处理的回调函数
 信号绑定回调函数
-发送消息
-
-创建一个信号这里创建了一个mail_send的信号12345678from flask.signals impo">
-<meta property="og:updated_time" content="2017-01-11T01:22:18.974Z">
+发送消息">
+<meta property="og:updated_time" content="2017-01-17T09:52:24.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask signal信号机制">
 <meta name="twitter:description" content="说明参考: 信号什么是信号？当核心框架的其他地方或另一个 Flask 扩展中发生动作时，信号通过发送 通知来帮助你解耦应用。简言之，信号允许某个发送者通知接收者有事情发生了。
@@ -120,9 +116,7 @@
 创建一个信号
 创建接收到信号之后处理的回调函数
 信号绑定回调函数
-发送消息
-
-创建一个信号这里创建了一个mail_send的信号12345678from flask.signals impo">
+发送消息">
 
 
 
@@ -413,12 +407,12 @@
 <li>信号绑定回调函数</li>
 <li>发送消息</li>
 </ol>
+<a id="more"></a>
 <h2 id="创建一个信号"><a href="#创建一个信号" class="headerlink" title="创建一个信号"></a>创建一个信号</h2><p>这里创建了一个<code>mail_send</code>的信号<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> flask.signals <span class="keyword">import</span> Namespace</div><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, current_app</div><div class="line"></div><div class="line"></div><div class="line">my_signals = Namespace()</div><div class="line">mail_send = my_signals.signal(<span class="string">'mail-send'</span>)</div><div class="line"></div><div class="line">app = Flask(__name__)</div></pre></td></tr></table></figure></p>
 <h2 id="创建接收到信号之后处理的回调函数"><a href="#创建接收到信号之后处理的回调函数" class="headerlink" title="创建接收到信号之后处理的回调函数"></a>创建接收到信号之后处理的回调函数</h2><p>回调函数为<code>mail_send_callback()</code>, 这里接收一个email的数据参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">mail_send_callback</span><span class="params">(sender, email, **extra)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    :param sender: 发送者</div><div class="line">    :param email: 数据参数email</div><div class="line">    :param extra:</div><div class="line">    :return:</div><div class="line">    """</div><div class="line">    <span class="keyword">print</span> <span class="string">'Got email: %s'</span> % email</div></pre></td></tr></table></figure></p>
 <h2 id="信号绑定回调函数-connect"><a href="#信号绑定回调函数-connect" class="headerlink" title="信号绑定回调函数 .connect()"></a>信号绑定回调函数 <code>.connect()</code></h2><p>需要把信号绑定回调函数,用于在接收信号之后的处理步骤.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mail_send.connect(mail_send_callback, app)</div><div class="line"></div><div class="line"><span class="comment"># 该方法的第一个参数是当信号发出时所调用的函数。第二个参数是可选参数，定义一个发送者。 使用 disconnect() 方法可以退订信号</span></div><div class="line"><span class="comment"># mail_sent_callback 为receiver, 一般是一个callback函数</span></div><div class="line"><span class="comment"># app: 为sender 发送者</span></div></pre></td></tr></table></figure>
 <h2 id="发送消息-send"><a href="#发送消息-send" class="headerlink" title="发送消息 .send()"></a>发送消息 <code>.send()</code></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> current_app</div><div class="line"></div><div class="line">mail_send.send(current_app._get_current_object(), email=email)</div><div class="line"></div><div class="line"><span class="comment"># 它的第一个 参数是一个发送者`current_app._get_current_object()`，</span></div><div class="line">其他参数要发送给订阅者的东西，其他参数是可选的,email=email为参数</div></pre></td></tr></table></figure>
-<a id="more"></a>
 <hr>
 <h1 id="完整的测试代码"><a href="#完整的测试代码" class="headerlink" title="完整的测试代码"></a>完整的测试代码</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="comment"># Author: YangCan</span></div><div class="line"><span class="comment"># Email: yoncan@qq.com</span></div><div class="line"><span class="comment"># About: https://yoncan.github.io</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, current_app, request, jsonify</div><div class="line"><span class="keyword">from</span> flask.signals <span class="keyword">import</span> Namespace</div><div class="line"></div><div class="line"></div><div class="line">app = Flask(__name__)</div><div class="line"></div><div class="line">my_signals = Namespace()</div><div class="line"></div><div class="line">mail_send = my_signals.signal(<span class="string">'mail-sent'</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">mail_send_callback</span><span class="params">(sender, email, **extra)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    :param sender:</div><div class="line">    :param email:</div><div class="line">    :param extra:</div><div class="line">    :return:</div><div class="line">    """</div><div class="line">    print(<span class="string">"sent mail to %s"</span>, email)</div><div class="line"></div><div class="line"></div><div class="line">mail_send.connect(mail_send_callback, app)</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">@app.route('/', methods=['POST'])</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_send_mail</span><span class="params">()</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    :return:</div><div class="line">    """</div><div class="line">    req_data = request.get_json()</div><div class="line"></div><div class="line">    email = req_data.get(<span class="string">'email'</span>, <span class="keyword">None</span>)</div><div class="line"></div><div class="line">    <span class="comment"># 发送signal</span></div><div class="line">    mail_send.send(current_app._get_current_object(), email=email)</div><div class="line"></div><div class="line">    <span class="keyword">return</span> jsonify(&#123;</div><div class="line">        <span class="string">'code'</span>: <span class="number">0</span>,</div><div class="line">        <span class="string">'msg'</span>: <span class="string">'send to &#123;0&#125; ok '</span>.format(email)</div><div class="line">    &#125;)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    app.run(host=<span class="string">'0.0.0.0'</span>, port=<span class="number">8000</span>, debug=<span class="keyword">True</span>)</div></pre></td></tr></table></figure>
 <p>命令行测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># curl -H &quot;Content-Type: application/json&quot; -XPOST    http://192.168.10.1:8000/ -d &apos;&#123;&quot;email&quot;: &quot;yangcan@local&quot;&#125;&apos;</div><div class="line">&#123;</div><div class="line">  &quot;code&quot;: 0, </div><div class="line">  &quot;msg&quot;: &quot;send to yangcan@local ok &quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -486,8 +480,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/01/bash-audit.html" rel="prev" title="bash命令审计,记录操作指令">
-                bash命令审计,记录操作指令 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/01/bash-audit.html" rel="prev" title="bash命令审计,记录终端操作指令">
+                bash命令审计,记录终端操作指令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
