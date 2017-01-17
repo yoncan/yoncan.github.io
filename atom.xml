@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yoncan.github.io/"/>
-  <updated>2017-01-17T09:51:33.532Z</updated>
+  <updated>2017-01-17T14:00:43.843Z</updated>
   <id>https://yoncan.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://yoncan.github.io/blog/2017/01/bash-audit.html"/>
     <id>https://yoncan.github.io/blog/2017/01/bash-audit.html</id>
     <published>2017-01-16T15:28:47.000Z</published>
-    <updated>2017-01-17T09:51:33.532Z</updated>
+    <updated>2017-01-17T14:00:43.843Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我们需要记录bash操作的指令,不管是root帐号,还是其他普通用户的帐号,都需要记录.<br>然后发送到远程端统一审计.<br>最终实现了以下的功能:</p>
 <ul>
@@ -93,7 +93,7 @@
     <link href="https://yoncan.github.io/blog/2017/01/flask-signal.html"/>
     <id>https://yoncan.github.io/blog/2017/01/flask-signal.html</id>
     <published>2017-01-10T14:38:58.000Z</published>
-    <updated>2017-01-17T09:52:24.348Z</updated>
+    <updated>2017-01-17T14:00:43.843Z</updated>
     
     <content type="html"><![CDATA[<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>参考: <a href="https://dormousehole.readthedocs.io/en/latest/signals.html" target="_blank" rel="external">信号</a><br>什么是信号？当核心框架的其他地方或另一个 Flask 扩展中发生动作时，信号通过发送 通知来帮助你解耦应用。简言之，信号允许某个发送者通知接收者有事情发生了。</p>
 <hr>
@@ -142,7 +142,7 @@
     <link href="https://yoncan.github.io/blog/2017/01/flask-url-regex.html"/>
     <id>https://yoncan.github.io/blog/2017/01/flask-url-regex.html</id>
     <published>2017-01-10T08:51:19.000Z</published>
-    <updated>2017-01-10T09:12:58.413Z</updated>
+    <updated>2017-01-10T13:45:07.417Z</updated>
     
     <content type="html"><![CDATA[<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>flask跟web.py差别挺大的，尤其是在路由管理这块。web.py把所有的路由都集中在一起，我比较喜欢这种方式。最近用flask，发现@app.route(‘<url>‘)中URL只支持string、int、float、path 4种类型，并不支持正则.</url></p>
 <h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p>通过运行如下代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</div><div class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    app = Flask(__name__)</div><div class="line">    pprint(app.url_map.converters)</div></pre></td></tr></table></figure></p>
@@ -180,7 +180,7 @@
     <link href="https://yoncan.github.io/blog/2017/01/rundeck-notice.html"/>
     <id>https://yoncan.github.io/blog/2017/01/rundeck-notice.html</id>
     <published>2017-01-10T07:06:58.000Z</published>
-    <updated>2017-01-17T09:52:03.168Z</updated>
+    <updated>2017-01-17T14:00:43.843Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>记录rundeck在使用的过程中的一些注意事项.</p>
 <h1 id="SSH端口改变了怎么处理"><a href="#SSH端口改变了怎么处理" class="headerlink" title="SSH端口改变了怎么处理?"></a>SSH端口改变了怎么处理?</h1><p>我们知道rundeck是基于ssh的,而rundeck提供的配置文件中,没有配置ssh端口的选项.</p>
@@ -233,7 +233,7 @@
     <link href="https://yoncan.github.io/blog/2017/01/my-anger.html"/>
     <id>https://yoncan.github.io/blog/2017/01/my-anger.html</id>
     <published>2017-01-09T12:53:51.000Z</published>
-    <updated>2017-01-17T09:55:06.719Z</updated>
+    <updated>2017-01-17T14:00:43.843Z</updated>
     
     <content type="html"><![CDATA[<h1 id="我想说的话"><a href="#我想说的话" class="headerlink" title="我想说的话"></a>我想说的话</h1><ul>
 <li>人人都需要一面镜子<br>  人非圣贤,孰能无过. 所以不管什么时候,你都需要能有一面镜子,站在对面,能时刻审视自己.<br>  换位思考,或许能更好的说明问题.<br>  妈妈说: 当我们需要交朋友和别人谈话的时候, 首先是要谈别人感兴趣的事情.</li>
@@ -279,7 +279,7 @@
     <link href="https://yoncan.github.io/blog/2016/12/python-itertools.html"/>
     <id>https://yoncan.github.io/blog/2016/12/python-itertools.html</id>
     <published>2016-12-30T01:37:36.000Z</published>
-    <updated>2017-01-17T09:53:00.684Z</updated>
+    <updated>2017-01-17T14:00:43.843Z</updated>
     
     <content type="html"><![CDATA[<h1 id="itertools-包含的所有方法"><a href="#itertools-包含的所有方法" class="headerlink" title="itertools 包含的所有方法"></a>itertools 包含的所有方法</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">count([n]) --&gt; n, n+1, n+2, ...</div><div class="line">cycle(p) --&gt; p0, p1, ... plast, p0, p1, ...</div><div class="line">repeat(elem [,n]) --&gt; elem, elem, elem, ... endlessly or up to n times</div><div class="line"></div><div class="line">Iterators terminating on the shortest input sequence:</div><div class="line">chain(p, q, ...) --&gt; p0, p1, ... plast, q0, q1, ... </div><div class="line">compress(data, selectors) --&gt; (d[0] if s[0]), (d[1] if s[1]), ...</div><div class="line">dropwhile(pred, seq) --&gt; seq[n], seq[n+1], starting when pred fails</div><div class="line">groupby(iterable[, keyfunc]) --&gt; sub-iterators grouped by value of keyfunc(v)</div><div class="line">ifilter(pred, seq) --&gt; elements of seq where pred(elem) is True</div><div class="line">ifilterfalse(pred, seq) --&gt; elements of seq where pred(elem) is False</div><div class="line">islice(seq, [start,] stop [, step]) --&gt; elements from</div><div class="line">       seq[start:stop:step]</div><div class="line">imap(fun, p, q, ...) --&gt; fun(p0, q0), fun(p1, q1), ...</div><div class="line">starmap(fun, seq) --&gt; fun(*seq[0]), fun(*seq[1]), ...</div><div class="line">tee(it, n=2) --&gt; (it1, it2 , ... itn) splits one iterator into n</div><div class="line">takewhile(pred, seq) --&gt; seq[0], seq[1], until pred fails</div><div class="line">izip(p, q, ...) --&gt; (p[0], q[0]), (p[1], q[1]), ... </div><div class="line">izip_longest(p, q, ...) --&gt; (p[0], q[0]), (p[1], q[1]), ... </div><div class="line"></div><div class="line">Combinatoric generators:</div><div class="line">product(p, q, ... [repeat=1]) --&gt; cartesian product</div><div class="line">permutations(p[, r])</div><div class="line">combinations(p, r)</div><div class="line">combinations_with_replacement(p, r)</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -340,7 +340,7 @@
     <link href="https://yoncan.github.io/blog/2016/12/zabbix-weixin-alert.html"/>
     <id>https://yoncan.github.io/blog/2016/12/zabbix-weixin-alert.html</id>
     <published>2016-12-29T14:56:06.000Z</published>
-    <updated>2017-01-10T07:02:22.749Z</updated>
+    <updated>2017-01-09T15:31:51.629Z</updated>
     
     <content type="html"><![CDATA[<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>本脚本是利用微信的公众平台进行信息推送的发送报警信息的.<br>可以通过这个链接 <a href="https://qy.weixin.qq.com/" target="_blank" rel="external">微信平台</a> 了解, 可以注册团队,就没有时间限制了.</p>
 <h1 id="代码文件"><a href="#代码文件" class="headerlink" title="代码文件"></a>代码文件</h1><blockquote><ul>
@@ -387,7 +387,7 @@
     <link href="https://yoncan.github.io/blog/2016/12/ansible-extend-setup.html"/>
     <id>https://yoncan.github.io/blog/2016/12/ansible-extend-setup.html</id>
     <published>2016-12-29T14:18:47.000Z</published>
-    <updated>2017-01-10T07:02:22.747Z</updated>
+    <updated>2017-01-09T15:31:51.629Z</updated>
     
     <content type="html"><![CDATA[<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>为了配合做的资产信息搜集, 直接在setup模块上加上了raid卡,底层的物理磁盘,内存等相关信息.</p>
 <h1 id="一些改变"><a href="#一些改变" class="headerlink" title="一些改变"></a>一些改变</h1><ul>
@@ -425,7 +425,7 @@
     <link href="https://yoncan.github.io/blog/2016/12/python-study.html"/>
     <id>https://yoncan.github.io/blog/2016/12/python-study.html</id>
     <published>2016-12-29T13:50:41.000Z</published>
-    <updated>2017-01-10T07:02:22.748Z</updated>
+    <updated>2017-01-09T15:31:51.629Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>路漫漫其修远兮, 吾将上下而求索</p>
 </blockquote>
@@ -452,7 +452,7 @@
     <link href="https://yoncan.github.io/blog/2016/12/python-metaclass.html"/>
     <id>https://yoncan.github.io/blog/2016/12/python-metaclass.html</id>
     <published>2016-12-10T07:56:30.000Z</published>
-    <updated>2017-01-17T09:53:27.168Z</updated>
+    <updated>2017-01-17T14:00:43.843Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>转载于 <a href="http://blog.jobbole.com/21351/" target="_blank" rel="external">伯乐在线</a> </p>
 <footer><strong>http://blog.jobbole.com/21351/</strong></footer></blockquote>
@@ -578,7 +578,7 @@
     <link href="https://yoncan.github.io/blog/2016/11/yunwei-houtai.html"/>
     <id>https://yoncan.github.io/blog/2016/11/yunwei-houtai.html</id>
     <published>2016-11-09T16:01:21.000Z</published>
-    <updated>2017-01-10T07:02:22.746Z</updated>
+    <updated>2017-01-09T16:15:28.056Z</updated>
     
     <content type="html"><![CDATA[<h1 id="后台的架构图"><a href="#后台的架构图" class="headerlink" title="后台的架构图"></a>后台的架构图</h1><p><img src="/assert/images/2016-11-10-yunwei-houtai/modal.jpg" alt="后台的架构图"><br>功能的介绍</p>
 <ul>
@@ -641,7 +641,7 @@
     <link href="https://yoncan.github.io/blog/2016/09/flask-sqlalchemy-seriablize.html"/>
     <id>https://yoncan.github.io/blog/2016/09/flask-sqlalchemy-seriablize.html</id>
     <published>2016-09-09T16:16:49.000Z</published>
-    <updated>2017-01-17T09:53:43.851Z</updated>
+    <updated>2017-01-17T14:00:43.843Z</updated>
     
     <content type="html"><![CDATA[<p>在flask开发运维后台的时候, 比较多的需求是, 从数据库取得结果, 需要序列化之后传递给前端的表格插件.</p>
 <p>下面我们创建一个基类, 在定义model的时候, 继承就可以达到想要的结果了</p>
@@ -692,7 +692,7 @@
     <link href="https://yoncan.github.io/blog/2016/07/yunwei-cmdb.html"/>
     <id>https://yoncan.github.io/blog/2016/07/yunwei-cmdb.html</id>
     <published>2016-07-03T16:27:30.000Z</published>
-    <updated>2017-01-10T07:02:22.745Z</updated>
+    <updated>2017-01-09T16:31:45.528Z</updated>
     
     <content type="html"><![CDATA[<p>前端太菜了,花了两天时间才弄好. 看来还得好好的学css</p>
 <p><img src="/assert/images/2016-07-04-yunwei-cmdb/11.jpg" alt="后台的架构图"><br><a id="more"></a><br><img src="/assert/images/2016-07-04-yunwei-cmdb/22.jpg" alt="后台的架构图"><br><img src="/assert/images/2016-07-04-yunwei-cmdb/33.jpg" alt="后台的架构图"><br><img src="/assert/images/2016-07-04-yunwei-cmdb/44.jpg" alt="后台的架构图"><br><img src="/assert/images/2016-07-04-yunwei-cmdb/44.jpg" alt="后台的架构图"></p>
@@ -717,7 +717,7 @@
     <link href="https://yoncan.github.io/blog/2016/03/ansible-api.html"/>
     <id>https://yoncan.github.io/blog/2016/03/ansible-api.html</id>
     <published>2016-03-05T16:24:10.000Z</published>
-    <updated>2017-01-17T09:53:59.888Z</updated>
+    <updated>2017-01-17T14:00:43.827Z</updated>
     
     <content type="html"><![CDATA[<p>ansible 2.0之后的api变更了, 下面是封装好了2.0之后的api使用方法</p>
 <p>具体的使用, 方法内有案例. 如果看过ansible的源码, 就可以容易理解这个API的封装. 其中要说的是 self.options 这个.  这个是构建命令行参数的, 当我们使用命令行上去执行指令ansible -i /etc/ansible/hosts localhost -m ping 时, 虽然只带了-i 和 -m 指定模块, 但是有很多默认值. 最终的所有参数的设置, 都是附加到self.options的</p>
