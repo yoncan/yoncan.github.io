@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
@@ -10,11 +10,21 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
 
 
 
@@ -65,7 +75,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="python,flask/tornado, ansible/salt, zabbix" />
@@ -79,7 +89,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -104,12 +114,13 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
+    tabs: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -129,18 +140,10 @@
 
 
 
-  <title>
+  <title>标签 | HI~ 杨小样</title>
   
 
-  
-    标签 | HI~ 杨小样
-  
-</title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
 
 
 
@@ -161,34 +164,44 @@
 
 
 
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">HI~ 杨小样</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HI~ 杨小样</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -267,7 +280,11 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
 
 	<h2 class="post-title" itemprop="name headline">标签</h2>
 
@@ -275,25 +292,34 @@
 
 </header>
 
-    
-    
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 15 个标签
-        </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/ansible/" style="font-size: 18px; color: #8e8e8e">ansible</a> <a href="/tags/api/" style="font-size: 12px; color: #ccc">api</a> <a href="/tags/bash/" style="font-size: 12px; color: #ccc">bash</a> <a href="/tags/bash-audit/" style="font-size: 12px; color: #ccc">bash audit</a> <a href="/tags/flask/" style="font-size: 24px; color: #4f4f4f">flask</a> <a href="/tags/itertools/" style="font-size: 12px; color: #ccc">itertools</a> <a href="/tags/metaclass/" style="font-size: 12px; color: #ccc">metaclass</a> <a href="/tags/other/" style="font-size: 12px; color: #ccc">other</a> <a href="/tags/python/" style="font-size: 30px; color: #111">python</a> <a href="/tags/pyzmq/" style="font-size: 12px; color: #ccc">pyzmq</a> <a href="/tags/regex/" style="font-size: 12px; color: #ccc">regex</a> <a href="/tags/rundeck/" style="font-size: 12px; color: #ccc">rundeck</a> <a href="/tags/sqlalchemy/" style="font-size: 12px; color: #ccc">sqlalchemy</a> <a href="/tags/zabbix/" style="font-size: 12px; color: #ccc">zabbix</a> <a href="/tags/持续集成/" style="font-size: 12px; color: #ccc">持续集成</a>
-        </div>
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <div class="tag-cloud">
+            <div class="tag-cloud-title">
+                目前共计 15 个标签
+            </div>
+            <div class="tag-cloud-tags">
+              <a href="/tags/ansible/" style="font-size: 18px; color: #8e8e8e">ansible</a> <a href="/tags/api/" style="font-size: 12px; color: #ccc">api</a> <a href="/tags/bash/" style="font-size: 12px; color: #ccc">bash</a> <a href="/tags/bash-audit/" style="font-size: 12px; color: #ccc">bash audit</a> <a href="/tags/flask/" style="font-size: 24px; color: #4f4f4f">flask</a> <a href="/tags/itertools/" style="font-size: 12px; color: #ccc">itertools</a> <a href="/tags/metaclass/" style="font-size: 12px; color: #ccc">metaclass</a> <a href="/tags/other/" style="font-size: 12px; color: #ccc">other</a> <a href="/tags/python/" style="font-size: 30px; color: #111">python</a> <a href="/tags/pyzmq/" style="font-size: 12px; color: #ccc">pyzmq</a> <a href="/tags/regex/" style="font-size: 12px; color: #ccc">regex</a> <a href="/tags/rundeck/" style="font-size: 12px; color: #ccc">rundeck</a> <a href="/tags/sqlalchemy/" style="font-size: 12px; color: #ccc">sqlalchemy</a> <a href="/tags/zabbix/" style="font-size: 12px; color: #ccc">zabbix</a> <a href="/tags/持续集成/" style="font-size: 12px; color: #ccc">持续集成</a>
+            </div>
+          </div>
+        
       </div>
+      
+      
+      
+    </div>
+    
+    
     
   </div>
 
 
           </div>
           
-
-  <p>热评文章</p>
-  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
 
 
           
@@ -311,6 +337,7 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
@@ -320,22 +347,29 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/logo.jpg"
+               src="/images/avatar.gif"
                alt="杨小样" />
           <p class="site-author-name" itemprop="name">杨小样</p>
-          <p class="site-description motion-element" itemprop="description">以行践言</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">14</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -343,8 +377,10 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -370,7 +406,9 @@
                   
                     <i class="fa fa-fw fa-github"></i>
                   
-                  GitHub
+                    
+                      GitHub
+                    
                 </a>
               </span>
             
@@ -387,6 +425,8 @@
 
 
       </section>
+
+      
 
       
 
@@ -429,9 +469,13 @@
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -451,6 +495,15 @@
 
 
   
+
+
+
+
+
+
+
+
+
 
 
 
@@ -476,48 +529,52 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
 
   
+  
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
 
   
     
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"ehco"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
     
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
   
 
 
@@ -525,17 +582,16 @@
 
 
 
+  
+
+
+
 
 
   
-  
 
   
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
   <script>AV.initialize("bj3vtzTy3tJ9ws4qYCK3kQdy-gzGzoHsz", "7zNMHwlC1L4GxbB3Us1UULPP");</script>
   <script>
     function showTime(Counter) {
@@ -645,6 +701,11 @@
 
   
 
+  
+
+  
+
+  
 
 </body>
 </html>
